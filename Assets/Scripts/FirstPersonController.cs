@@ -2,35 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GameState
-{
-    Menu,
-    InGame,
-    Paused,
-    Loading
-}
-
 public class FirstPersonController: MonoBehaviour
 {
     public float speed = 5f;
     public float rotSpeed = 3f;
-
-    public float myInt = 4;
+    
     private float currentXRot = 0;
     public float verticalRotLimit = 60f;
-   // public Transform cam;
-    public MovingBall movingBall;
-
-    List<Vector3> lastPos = new List<Vector3>();
-    int lastIndex = 0;
-    public GameState currentGameState = GameState.Menu;
 
     // Update is called once per frame
     void Update()
     {
-
-        lastPos[lastIndex % 3] = transform.position;
-        lastIndex++;
+       
 
         if (Input.GetKey("w"))
         {
